@@ -1,0 +1,40 @@
+{
+  "name": "checkout-system",
+  "version": "1.0.0",
+  "description": "a checkout system that can scan items in any order and apply certain promotional campaigns to give discounts.",
+  "main": "index.js",
+  "repository": "https://github.com/sodiadrhain/checkout-system",
+  "author": "Adesoji Awobajo",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run build && node ./dist/index.js",
+    "dev": "ts-node ./src/index.ts",
+    "dev:nodemon": "./node_modules/nodemon/bin/nodemon.js",
+    "build": "npx tsc",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "docker:bash": "docker-compose up -d",
+    "docker:up": "docker container start checkout_system",
+    "docker:down": "docker container stop checkout_system"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.3.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "husky": "^7.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}
