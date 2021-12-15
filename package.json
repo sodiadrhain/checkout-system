@@ -7,7 +7,7 @@
   "author": "Adesoji Awobajo",
   "license": "MIT",
   "scripts": {
-    "start": "yarn run build && node ./dist/index.js",
+    "start": "yarn run build && node ./dist/server.js",
     "dev": "ts-node ./src/index.ts",
     "dev:nodemon": "./node_modules/nodemon/bin/nodemon.js",
     "build": "npx tsc",
@@ -18,7 +18,9 @@
     "docker:down": "docker container stop checkout_system"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.16.5",
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.3",
     "@types/node": "^16.11.11",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
@@ -30,7 +32,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "jest": "^27.4.5"
   },
   "husky": {
     "hooks": {
