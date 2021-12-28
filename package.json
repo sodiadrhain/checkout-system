@@ -19,17 +19,19 @@
     "docker:bash": "docker-compose up -d",
     "docker:up": "docker container start checkout_system",
     "docker:down": "docker container stop checkout_system",
-    "test": "jest --watchAll"
+    "test": "jest --detectOpenHandles tests/*"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.0.3",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^16.11.11",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "eslint": "^8.3.0",
+    "mongodb-memory-server": "^8.0.4",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.0",
     "ts-node": "^10.4.0",
@@ -38,7 +40,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "husky": "^7.0.4",
-    "jest": "^27.4.5"
+    "jest": "^27.4.5",
+    "mongoose": "^6.1.2"
   },
   "husky": {
     "hooks": {
